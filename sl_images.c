@@ -6,7 +6,7 @@
 /*   By: jparejo- <jparejo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 13:47:22 by jparejo-          #+#    #+#             */
-/*   Updated: 2022/04/13 12:27:53 by jparejo-         ###   ########.fr       */
+/*   Updated: 2022/04/13 13:47:26 by jparejo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*image_exit(t_mlx *vars)
 char	*image_rocket(t_mlx *vars)
 {
 	char	*img;
-	char	key;
 
 	key = vars->key;
 	if (vars->key == 'u')
