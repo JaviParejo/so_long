@@ -6,11 +6,34 @@
 /*   By: jparejo- <jparejo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 11:24:02 by jparejo-          #+#    #+#             */
-/*   Updated: 2022/04/08 18:15:01 by jparejo-         ###   ########.fr       */
+/*   Updated: 2022/04/13 15:51:17 by jparejo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	destroy(t_mlx *vars)
+{
+	int	i;
+
+	i = 0;
+	if (vars->map)
+	{
+		while (vars->map[i])
+		{
+			free(vars->map[i]);
+			i++;
+		}
+		free(vars->map);
+	}
+	if (vars->mlx)
+	{
+		mlx_destroy_image(vars->mlx, vars->img);
+		mlx_clear_window(vars->mlx, vars->win);
+		mlx_destroy_window(vars->mlx, vars->win);
+	}
+	// exit (0);
+}
 
 int	map_with(t_mlx *vars)
 {

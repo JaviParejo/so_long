@@ -6,7 +6,7 @@
 /*   By: jparejo- <jparejo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 12:49:40 by jparejo-          #+#    #+#             */
-/*   Updated: 2022/04/13 12:52:48 by jparejo-         ###   ########.fr       */
+/*   Updated: 2022/04/13 15:21:33 by jparejo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,13 @@
 int	close_esc(int keycode, t_mlx *vars)
 {
 	if (keycode == 53)
-	{
-		mlx_destroy_window(vars->mlx, vars->win);
-		exit(0);
-	}
+		destroy(vars);
 	return (0);
 }
 
 int	close_cross(t_mlx *vars)
 {
-	mlx_destroy_window(vars->mlx, vars->win);
-	exit(0);
+	destroy(vars);
 	return (0);
 }
 
@@ -33,9 +29,12 @@ int	main(int argc, char **argv)
 {
 	t_mlx	vars;
 
+	vars.mlx = NULL;
+	vars.win = NULL;
 	vars.num = 0;
 	vars.key = '0';
 	vars.map = NULL;
+	vars.img = NULL;
 	vars.p = 0;
 	vars.c = 0;
 	vars.e = 0;

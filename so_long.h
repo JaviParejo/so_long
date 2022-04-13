@@ -6,7 +6,7 @@
 /*   By: jparejo- <jparejo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 18:59:25 by jparejo-          #+#    #+#             */
-/*   Updated: 2022/04/13 12:27:27 by jparejo-         ###   ########.fr       */
+/*   Updated: 2022/04/13 15:42:59 by jparejo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct mlx {
 	char	**map;
 	int		num;
 	char	key;
+	void	*img;
 	int		p;
 	int		c;
 	int		e;
@@ -38,9 +39,9 @@ int		close_esc(int keycode, t_mlx *vars);
 
 int		close_cross(t_mlx *vars);
 
-void	print_error(int error);
+void	print_error(int error, t_mlx *vars);
 
-void	check_read(int argc, char **argv);
+void	check_read(int argc, char **argv, t_mlx *vars);
 
 void	check_map_letter(int width, int height, t_mlx *vars);
 
@@ -48,7 +49,7 @@ void	check_map_elements(int y, int x, t_mlx *vars);
 
 void	check_map(t_mlx *vars);
 
-void	check_map_emptylines(char *str);
+void	check_map_emptylines(char *str, t_mlx *vars);
 
 void	read_map(int argc, char **argv, t_mlx *vars);
 
@@ -81,5 +82,9 @@ void	move_left(int y, int x, t_mlx *vars);
 void	move_down(int y, int x, t_mlx *vars);
 
 void	move_right(int y, int x, t_mlx *vars);
+
+void	destroy(t_mlx *vars);
+
+void	leak(void);
 
 #endif

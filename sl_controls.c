@@ -6,7 +6,7 @@
 /*   By: jparejo- <jparejo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 20:28:44 by jparejo-          #+#    #+#             */
-/*   Updated: 2022/04/13 12:31:56 by jparejo-         ###   ########.fr       */
+/*   Updated: 2022/04/13 15:42:54 by jparejo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	final_move(t_mlx *vars)
 {
 	vars->num++;
 	ft_printf("%d\n%s\n", vars->num, "¡Has ganado!");
-	mlx_destroy_window(vars->mlx, vars->win);
+	destroy(vars);
+	atexit(leak);
 	exit (0);
 }
 

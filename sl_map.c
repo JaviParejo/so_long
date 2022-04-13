@@ -6,7 +6,7 @@
 /*   By: jparejo- <jparejo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 02:12:35 by javierparej       #+#    #+#             */
-/*   Updated: 2022/04/13 12:07:41 by jparejo-         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:51:06 by jparejo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void	check_map_letter(int width, int height, t_mlx *vars)
 			if (vars->map[y][x] != '1' && vars->map[y][x] != '0'
 				&& vars->map[y][x] != 'C' && vars->map[y][x] != 'E'
 				&& vars->map[y][x] != 'P')
-				print_error(6);
+				print_error(6, vars);
 			else if ((x == 0 || x == width - 1 || y == 0 || y == height - 1)
 				&& vars->map[y][x] != '1')
-				print_error(7);
+				print_error(7, vars);
 			else
 				check_map_elements(y, x, vars);
 			x++;
@@ -47,7 +47,7 @@ void	check_map_letter(int width, int height, t_mlx *vars)
 		y++;
 	}
 	if (vars->p != 1 || vars->c < 1 || vars->e != 1)
-		print_error(9);
+		print_error(9, vars);
 }
 
 void	check_map(t_mlx *vars)
@@ -68,11 +68,11 @@ void	check_map(t_mlx *vars)
 			size++;
 		}
 		if (size != width)
-			print_error(5);
+			print_error(5, vars);
 		height++;
 		size = 0;
 	}
 	if (width <= height)
-		print_error(4);
+		print_error(4, vars);
 	check_map_letter(width, height, vars);
 }

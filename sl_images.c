@@ -6,7 +6,7 @@
 /*   By: jparejo- <jparejo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 13:47:22 by jparejo-          #+#    #+#             */
-/*   Updated: 2022/04/13 13:48:34 by jparejo-         ###   ########.fr       */
+/*   Updated: 2022/04/13 14:54:51 by jparejo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,27 +66,26 @@ char	*select_images(char c, void *img, t_mlx *vars)
 
 void	print_images(t_mlx *vars)
 {
-	void	*img;
-	int		width;
-	int		height;
+	int		w;
+	int		h;
 	int		y;
 	int		x;
 
-	height = 0;
-	width = 0;
+	h = 0;
+	w = 0;
 	y = 0;
 	x = 0;
-	while (vars->map[height])
+	while (vars->map[h])
 	{
-		while (vars->map[height][width])
+		while (vars->map[h][w])
 		{
-			img = select_images(vars->map[height][width], img, vars);
-			mlx_put_image_to_window(vars->mlx, vars->win, img, x, y);
+			vars->img = select_images(vars->map[h][w], vars->img, vars);
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->img, x, y);
 			x = x + 64;
-			width++;
+			w++;
 		}
-		height++;
-		width = 0;
+		h++;
+		w = 0;
 		y = y + 64;
 		x = 0;
 	}
