@@ -6,7 +6,7 @@
 /*   By: jparejo- <jparejo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 16:08:54 by jparejo-          #+#    #+#             */
-/*   Updated: 2022/03/24 16:51:42 by jparejo-         ###   ########.fr       */
+/*   Updated: 2022/04/13 13:51:24 by jparejo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ char	*currentline(char *memory)
 {
 	char	*line;
 	int		size;
-	int		i;
 
 	size = 0;
-	i = 0;
 	while (memory[size] && memory[size] != '\n')
 	{
 		size++;
