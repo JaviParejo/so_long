@@ -6,7 +6,7 @@
 /*   By: jparejo- <jparejo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 13:47:22 by jparejo-          #+#    #+#             */
-/*   Updated: 2022/04/13 13:47:26 by jparejo-         ###   ########.fr       */
+/*   Updated: 2022/04/13 13:48:34 by jparejo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	*image_rocket(t_mlx *vars)
 {
 	char	*img;
 
-	key = vars->key;
 	if (vars->key == 'u')
 		img = "images/rocket_up.xpm";
 	else if (vars->key == 'l')
